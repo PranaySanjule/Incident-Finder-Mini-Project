@@ -94,6 +94,7 @@ if (!$conn){
                       <th>".$result['Image Name']."</th>
                       <th>".$result['Computer Name']."</th>
                       <th>".$result['Log Date']."</th>
+                      </tr>
                     ";
                   }
                   
