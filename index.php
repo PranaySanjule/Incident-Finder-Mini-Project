@@ -20,7 +20,7 @@ if (!$conn){
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Incident Finder</title>
+    <title>Incident Monitor</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -31,7 +31,7 @@ if (!$conn){
   </head>
   <body>
     <div class="container my-4">
-      <h1>Incident Finder</h1>
+      <h1>Incident Monitor</h1>
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
           <button
