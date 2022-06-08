@@ -31,12 +31,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $sno = $_POST["snoEdit"];
         $keywords = $_POST["keywordsEdit"];
+        // print_r(gettype($keywords));
 
         $query = "UPDATE `keyword` SET `keywords` = '$keywords' WHERE `keyword`.`sno` = $sno";
-  
+        // print_r($query);
         $result = mysqli_query($conn, $query);
         if($result){
-          $update = true;
+          echo "Updated";
         }
         else{
             echo '<div class="alert alert-danger" role="alert">
@@ -290,7 +291,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <!-- show all the fetch keywords from DB -->
                 <?php echo $output; ?>
           </table>
-        </div>
+        </div>  
         <div
           class="tab-pane fade"
           id="pills-list"
@@ -378,6 +379,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       </footer>
 
       <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
       <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
@@ -433,9 +435,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }) 
   </script>
 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
   <script type="text/javascript" src="dist/jquery.tabledit.js"></script>
   <script type="text/javascript" src="custom_table_edit.js"></script>
 
 
   </body>
-</html
+</html> 

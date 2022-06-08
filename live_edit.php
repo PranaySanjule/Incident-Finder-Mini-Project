@@ -1,30 +1,33 @@
 <?php
-include("db_connect.php");
-$input = filter_input_array(INPUT_POST);
-if ($input['action'] == 'snoEdit') {	
-	$update_field='';
-	if(isset($input['keywords'])) {
-		$update_field.= "keywords='".$input['keywords']."'";
-	}
-	if($update_field && $input['sno']) {
-		$sql_query = "UPDATE `keyword` SET $update_field WHERE `keyword`.`sno`='" . $input['sno'] . "'";	
-		mysqli_query($conn, $sql_query) or die("database error:". mysqli_error($conn));		
-	}
-		// $sno = $input["sno"];
-        // $keywords = $input["keywords"];
+// header();
+include_once("db_connect.php");
+// include("index.php");
+  $doc = new DOMDocument();
+  $doc->loadHTMLFile("index.php");
+  $sno = $doc->getElementById("snoEdit");
+  print_r($sno->nodeValue);
 
-		// if(isset($input['keywords'])){
-		// 	$query = "UPDATE `keyword` SET `keywords` = '$keywords' WHERE `keyword`.`sno` = $sno";
-		// }
-  
-        // $result = mysqli_query($conn, $query);
-        // if($result){
-        //   $update = true;
-        // }
-        // else{
-        //     echo '<div class="alert alert-danger" role="alert">
-        //   Data Not Updated!
-        // </div>';
-        // }
+$input = filter_input_array(INPUT_POST);
+if ($input['action'] == 'edit') {	
+
+	// print_r($input);
+      if(isset($input['keywords'])){
+
+        $sno = $input['sno'];
+        $keywords = $input['keywords'];
+		  // print_r(gettype($keywords));
+
+        $query = "UPDATE `keyword` SET `keywords` = '$keywords' WHERE `keyword`.`sno` = $sno";
+		  // print_r($query);
+        $result = mysqli_query($conn, $query);
+        if($result){
+          echo "Updated";
+        }
+        else{
+            echo '<div class="alert alert-danger" role="alert">
+          Data Not Updated!
+        </div>';
+        }
+      }
 
 }
