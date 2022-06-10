@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  min-height: 100vh;
+  width: 100%;
+  background: lightcyan;
+
+  color: white;
+}
+
+.heading {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 900;
+  font-size: xx-large;
+  color: black;
+}
+
+th {
+  color: black;
+  font-weight: 900;
+  font-size: large;
+}
+
+.keywordOuput {
+  color: black;
+}
+
+footer {
+  /* margin-top: auto; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-bottom: 0;
+}
